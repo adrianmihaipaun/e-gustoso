@@ -77,18 +77,18 @@ function customFind(object, key, value) {
 
 function generateImgUrl(imgUrl) {
     var url = document.location.href;
-    url = url.split('gustoso/');
+    url = url.split('.com');
     url = url[0]
     
-    return url + 'gustoso/design/' + imgUrl;
+    return url + '.com/design/' + imgUrl;
 }
 
 function generateProductsPageUrl(productsUrl) {
     var url = document.location.href;
-    url = url.split('gustoso/');
+    url = url.split('.com');
     url = url[0]
 
-    return url + 'gustoso/' + productsUrl;
+    return url + '.com/' + productsUrl;
 }
 
 const CURRENCY = 'Lei';
