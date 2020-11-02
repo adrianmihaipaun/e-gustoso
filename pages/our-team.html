@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustoso - italian food</title>
+    <link rel="icon" href="design/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/file.css">
+</head>
+<body>
+    <section class="module--nav">
+        <div class="container">
+            <div class="row">
+                <div class="module-header-logo px-0 col-5 col-md-2">
+                    <a href="index.html">
+                        <img src="design/logo.png" alt="Gustoso Logo">
+                    </a>
+                </div>
+                <nav class="col-5 col-md-10 px-0">
+                    <ul class="nav nav--main uppercase">
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="menu.html">Menu</a>
+                        </li>
+                        <li>
+                            <a href="contacts.html">Contacts</a>
+                        </li>
+                    </ul>
+                    <ul class="social-media">
+                        <li class="social-facebook">
+                            <a href="https://ro-ro.facebook.com/" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="social-insta">
+                            <a href="https://www.instagram.com/?hl=ro" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="social-twitter">
+                            <a href="https://twitter.com/?lang=ro" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="social-youtube">
+                            <a href="#" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="burger-menu">
+                        <span></span>
+                    </div>
+                    <div class="social-ellipsis"><i class="fas fa-ellipsis-v"></i></div>
+                </nav>
+            </div>
+            <div class="module--navigation">
+                <nav>
+                    <ul class="nav nav--main uppercase level1">
+                        <li class="active">
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li class="has-children">
+                            <a href="javascript:void(0)">Pages</a>
+                            <ul class="level2">
+                                <li>
+                                    <a href="oferte.html">Oferte</a>
+                                </li>
+                                <li>
+                                    <a href="privacy.html">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="forms.html">Forms</a>
+                                </li>
+                                <li>
+                                    <a href="coming-soon.html">Coming Soon</a>
+                                </li>
+                                <li>
+                                    <a href="blog.html">Blog Post</a>
+                                </li>
+                                <li>
+                                    <a href="gallery.html">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="evenimente.html">Evenmente</a>
+                                </li>
+                                <li>
+                                    <a href="pages/our-team.html">Our team</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="menu.html">Menu</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="news.html">News</a>
+                        </li>
+                        <li>
+                            <a href="contacts.html">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <section class="module--hero-banner">
+        <div class="container text-center">
+            <h1 class="uppercase">Welcome</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit dolores velit aperiam, amet ullam reprehenderit. Exercitationem aliquam excepturi possimus voluptas!</p>
+        </div>
+    </section>
+    <section class="breadcrumbs"></section>
+    <section class="module--check-availability">
+        <div class="container">
+            <form action="" method="POST">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Your name" required> 
+                </div>
+                <div>
+                    <label for="phone">Phone</label>
+                    <input type="number" name="phone" placeholder="Your phone number" required>
+                </div>
+                <div class="form-datepicker">
+                    <span>Date</span>
+                    <input type="text" id="datepicker" name="date">
+                </div>
+                <div>
+                    <label for="people">NO. OF PEOPLE</label>
+                    <select name="people" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <input type="submit" value="Check availability">
+            </form>
+        </div>
+    </section>
+
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/file.js"></script>
+</body>
+</html>
