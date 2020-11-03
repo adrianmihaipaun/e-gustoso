@@ -2,6 +2,7 @@ $(document).ready(function () {
     // burger menu
     $('.burger-menu').on('click', function(){
         $('.module--nav').toggleClass('js--active');
+        $('.module-info').removeClass('js--active-alert');
     });
 
     $('.has-children').on('click', function(){
@@ -39,6 +40,9 @@ $(document).ready(function () {
             });
         }
     }
+
+    // current year
+    document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
 });
 
 // function
@@ -46,20 +50,24 @@ function scrollControll() {
     if(window.pageYOffset > 0){
         $('body').addClass('js--scroll');
         $('.module--nav').removeClass('js--active');
+        $('.module-info').removeClass('js--active-alert');
     } else {
         $('body').removeClass('js--scroll');
+        $('.module-info').addClass('js--active-alert');
     }
 }
 
 // Products
 function structureProductsHtml(product) {
-    var structureHtml = '<div class="products-container col-12 col-md-4">'+
-                            '<img src="'+ generateImgUrl(product.img) +'" alt="'+ product.name +'">'+
-                           ' <a href="'+ generateProductsPageUrl(product.productsPagesUrl) +'" class="button">Order now</a>'+
-                            '<h4 class="products-title">'+
-                                '<a href="'+ generateProductsPageUrl(product.productsPagesUrl) +'">'+ product.name +'</a>'+
-                            '</h4>'+
-                            '<p class="product-price">'+ getPrice(product) +'</p>'+
+    var structureHtml = '<div class="products-container col-12 col-lg-4 col-md-6">'+
+                            '<div class="products-container--content">'+
+                                '<img src="'+ generateImgUrl(product.img) +'" alt="'+ product.name +'">'+
+                                ' <a href="'+ generateProductsPageUrl(product.productsPagesUrl) +'" class="button">Order now</a>'+
+                                '<h4 class="products-title">'+
+                                    '<a href="'+ generateProductsPageUrl(product.productsPagesUrl) +'">'+ product.name +'</a>'+
+                                '</h4>'+
+                                '<p class="product-price">'+ getPrice(product) +'</p>'+
+                            '</div>'+
                         '</div>';
     return structureHtml;
 }
