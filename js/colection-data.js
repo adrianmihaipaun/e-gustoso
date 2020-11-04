@@ -1,5 +1,6 @@
 var productsElement = {
     0 : {
+        id: 1,
         category: 'Food',
         name: 'Ravioli',
         pret: '20',
@@ -9,6 +10,7 @@ var productsElement = {
     },
 
     1 : {
+        id: 2,
         category: 'Food',
         name: 'Pasta',
         pret: '25',
@@ -20,6 +22,7 @@ var productsElement = {
     },
 
     3 : {
+        id: 3,
         category: 'Food',
         name: 'Bruschetti',
         pret: '12.89',
@@ -29,6 +32,7 @@ var productsElement = {
     },
 
     4 : {
+        id: 4,
         category: 'Food',
         name: 'Pizza',
         pret: '45',
@@ -38,6 +42,7 @@ var productsElement = {
     },
 
     5 : {
+        id: 5,
         category: 'Food',
         name: 'Meat',
         pret: '35',
@@ -47,6 +52,7 @@ var productsElement = {
     },
 
     6 : {
+        id: 6,
         category: 'Desert',
         name: 'Gelato',
         pret: '11.66',
@@ -56,6 +62,7 @@ var productsElement = {
     },
 
     7 : {
+        id: 7,
         category: 'Desert',
         name: 'Tiramiu',
         pret: '22.34',
@@ -67,6 +74,7 @@ var productsElement = {
     },
 
     8 : {
+        id: 8,
         category: 'Desert',
         name: 'Cookies',
         pret: '8.55',
@@ -76,6 +84,7 @@ var productsElement = {
     },
 
     9 : {
+        id: 9,
         category: 'Desert',
         name: 'Croissant',
         pret: '8.5',
@@ -85,6 +94,7 @@ var productsElement = {
     },
 
     10 : {
+        id: 10,
         category: 'Drinks',
         name: 'Fruit Juice',
         pret: '10.8',
@@ -94,6 +104,7 @@ var productsElement = {
     },
 
     11 : {
+        id: 11,
         category: 'Drinks',
         name: 'Wine',
         pret: '185',
@@ -103,6 +114,7 @@ var productsElement = {
     },
 
     12 : {
+        id: 12,
         category: 'Drinks',
         name: 'Aperol Spritz',
         pret: '85.99',
@@ -113,6 +125,7 @@ var productsElement = {
 
     
     13 : {
+        id: 13,
         category: 'Drinks',
         name: 'Smoothie',
         pret: '19',

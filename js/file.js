@@ -40,9 +40,42 @@ $(document).ready(function () {
             });
         }
     }
+    // product page
+    if ($('.page--product').length) {
+        if (typeof productsElement == 'undefined') {
+                $('.module-product-container').html('<div class="col-12 text-left featured_container-content">Produs momentan indisponibil!</div>')
+        } else {
+            var productId = getParamFromUrl('productId');
+            if (productId != null) {
+                var product = customFind(productsElement, 'id', productId);
+                $('.module-product-container').append(completStructureProducts(product[0]));
+            } //else {
+            //     document.location = 'index.html';
+            // }
+        }
+    }
 
     // current year
     document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
+
+    // sfHover
+    $('.nav--main-inner .has-children').hover(
+        function() {
+            $(this).addClass('js--hover');
+        }, function() {
+            $(this).removeClass('js--hover');
+        }
+    );
+
+    // cart
+    $('.module--cart a').on('click', function(event){
+        event.preventDefault();
+        $('.fa-shopping-cart').html('<span class="message-cart">Cosul tau este gol!</span>');
+    });
+    setInterval(function() {
+        $('.message-cart').remove();
+    }, 2500);
+
 });
 
 // function
@@ -62,9 +95,9 @@ function structureProductsHtml(product) {
     var structureHtml = '<div class="products-container col-12 col-lg-4 col-md-6">'+
                             '<div class="products-container--content">'+
                                 '<img src="'+ generateImgUrl(product.img) +'" alt="'+ product.name +'">'+
-                                ' <a href="'+ generateProductsPageUrl(product.productsPagesUrl) +'" class="button">Order now</a>'+
+                                ' <a href="'+ generateProductsPageUrl(product) +'" class="button">Order now</a>'+
                                 '<h4 class="products-title">'+
-                                    '<a href="'+ generateProductsPageUrl(product.productsPagesUrl) +'">'+ product.name +'</a>'+
+                                    '<a href="'+ generateProductsPageUrl(product) +'">'+ product.name +'</a>'+
                                 '</h4>'+
                                 '<p class="product-price">'+ getPrice(product) +'</p>'+
                             '</div>'+
@@ -72,10 +105,28 @@ function structureProductsHtml(product) {
     return structureHtml;
 }
 
+function completStructureProducts(product) {
+var completStructure =  '<div class="module-product-image col-12 col-md-5">'+
+                            '<img src="'+ generateImgUrl(product.img) +'" alt="'+ product.name +'">'+
+                        '</div>'+
+                        '<div class="module-product-content col-12 col-md-7">'+
+                            '<div class="product-category">'+ product.category +'</div>'+
+                            '<div class="product-title">'+ product.name +'</div>'+
+                            '<div class="product-description">'+ product.description +'</div>'+
+                            '<div class="row product--container-content">'+
+                                '<div class="product-price col-12 col-md-6">'+ getPrice(product) +'</div>'+
+                                '<div class="product--container-content-button col-12 col-md-6"><a class="button">Adauga in cos</a></div>'+
+                            '</div>'+
+                        '</div>';
+    return completStructure;
+}
+
 function customFind(object, key, value) {
     var findedValue = [];
     $.each(object, function(index, item){
-        if (typeof item[key] != 'undefined' && item[key].toLowerCase() == value.toLowerCase()) {
+        if (
+            parseInt(value) == NaN && typeof item[key] != 'undefined' && item[key].toLowerCase() == value.toLowerCase() ||
+            typeof item[key] != 'undefined' && item[key] == value) {
             findedValue.push(item);
         }
     });
@@ -91,12 +142,12 @@ function generateImgUrl(imgUrl) {
     return url + '.com/design/' + imgUrl;
 }
 
-function generateProductsPageUrl(productsUrl) {
+function generateProductsPageUrl(product) {
     var url = document.location.href;
     url = url.split('.com');
     url = url[0]
 
-    return url + '.com/' + productsUrl;
+    return url + '.com/' + product.productsPagesUrl + '?productId=' + product.id;
 }
 
 const CURRENCY = 'Lei';
@@ -108,4 +159,13 @@ function getPrice(product) {
     } else {
         return price;
     }
+}
+
+function getParamFromUrl(param) {
+    var searchParams = new URLSearchParams(window.location.search);
+    var param = null;
+    if (searchParams.has('productId')) {
+        var param = searchParams.get('productId');
+    } 
+    return param;
 }
